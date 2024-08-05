@@ -39,6 +39,16 @@ Note: This will calculate the hierarchy levels for all issues. The processing ti
 
 ### 4. Restart Redmine
 
+## Uninstallation
+### 1. Reset the migrations
+Run the following command to reset the migrations:
+```
+bundle exec rake redmine:plugins:migrate NAME=issue_hierarchy_filter RAILS_ENV=production VERSION=0
+```
+
+### 2. Remove the Plugin Directory
+Delete the `redmine_issue_hierarchy_filter` directory from your Redmine plugins directory.
+
 ## Usage
 
 Filter issues based on their levels in the issue list view.
