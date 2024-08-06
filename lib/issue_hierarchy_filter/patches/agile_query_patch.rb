@@ -1,6 +1,3 @@
-if Redmine::Plugin.installed?(:redmine_agile) &&
-  Gem::Version.new(Redmine::Plugin.find(:redmine_agile).version) >= Gem::Version.new('1.4.3')
-
 module IssueHierarchyFilter
   module Patches
     module AgileQueryPatch
@@ -10,6 +7,7 @@ module IssueHierarchyFilter
   end
 end
 
-AgileQuery.send(:include, IssueHierarchyFilter::Patches::AgileQueryPatch)
-
+if Redmine::Plugin.installed?(:redmine_agile) &&
+  Gem::Version.new(Redmine::Plugin.find(:redmine_agile).version) >= Gem::Version.new('1.4.3')
+  AgileQuery.send(:include, IssueHierarchyFilter::Patches::AgileQueryPatch)
 end
