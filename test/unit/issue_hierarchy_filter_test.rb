@@ -1,7 +1,7 @@
 require File.expand_path('../../test_helper', __FILE__)
 
 class IssueHierarchyFilterTest < ActiveSupport::TestCase
-  fixtures :issues
+  fixtures :issues, :projects, :versions, :trackers, :issue_categories
 
   def test_calculate_level
     issue1 = Issue.find(1)
