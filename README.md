@@ -1,4 +1,5 @@
 # Redmine Issue Hierarchy Filter
+[![Test](https://github.com/sk-ys/redmine_issue_hierarchy_filter/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/sk-ys/redmine_issue_hierarchy_filter/actions/workflows/test.yml?query=branch%3Amain)
 
 This is a plugin for Redmine that adds issue hierarchy filter.
 
