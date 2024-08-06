@@ -1,6 +1,6 @@
 # Reference: https://github.com/sanak/redmine_text_blocks/blob/main/.github/workflows/test.yml
 
-name: "Redmine Plugin CI"
+name: "Redmine Plugin Test"
 env:
   PLUGIN_NAME: ${{ github.event.repository.name }}
 on:
