@@ -34,7 +34,7 @@ bundle exec rake redmine:plugins:migrate NAME=issue_hierarchy_filter RAILS_ENV=p
 ### 3. Initialize the `issue_level` table
 Run the following command to initialize the `issue_level` table:
 ```
-bundle exec rake issue_hierarchy_filter:update_levels
+bundle exec rake issue_hierarchy_filter:update_levels RAILS_ENV=production
 ```
 Note: This will calculate the hierarchy levels for all issues. The processing time may vary depending on the number of registered issues.
 
