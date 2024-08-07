@@ -1,0 +1,12 @@
+GEM
+  specs:
+    ruby-progressbar (1.13.0)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  ruby-progressbar
+
+BUNDLED WITH
+   2.2.33

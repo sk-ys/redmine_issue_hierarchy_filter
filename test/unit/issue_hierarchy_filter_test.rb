@@ -3,6 +3,10 @@ require File.expand_path('../../test_helper', __FILE__)
 class IssueHierarchyFilterTest < ActiveSupport::TestCase
   fixtures :issues, :projects, :versions, :trackers, :issue_categories
 
+  def setup
+    Rails.application.load_tasks
+  end
+
   def test_calculate_level
     issue1 = Issue.find(1)
     assert_equal 0, issue1.calculate_level
@@ -44,5 +48,15 @@ class IssueHierarchyFilterTest < ActiveSupport::TestCase
 
     issue_level = IssueLevel.find_by(issue_id: issue.id)
     assert_nil issue_level
+  end
+
+  def test_rake_task_update_levels
+    Rake::Task["issue_hierarchy_filter:update_levels"].reenable
+
+    assert_equal 0, IssueLevel.all.count
+
+    Rake::Task["issue_hierarchy_filter:update_levels"].invoke
+
+    assert_not_equal 0, IssueLevel.all.count
   end
 end
